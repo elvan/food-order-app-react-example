@@ -11,7 +11,7 @@ const Cart = (props) => {
   const hasItems = cartContext.items.length > 0;
 
   const cartItemAddHandler = (item) => {
-    cartContext.addItem(item);
+    cartContext.addItem({ ...item, amount: 1 });
   };
 
   const cartItemRemoveHandler = (id) => {
@@ -27,7 +27,7 @@ const Cart = (props) => {
           amount={item.amount}
           price={item.price}
           onAdd={cartItemAddHandler.bind(null, item)}
-          onRemove={cartItemAddHandler.bind(null, item.id)}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
         />
       ))}
     </ul>
