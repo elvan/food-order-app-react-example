@@ -1,5 +1,4 @@
-import { useContext, useRef, useState } from 'react';
-import CartContext from '../../../store/cart-context';
+import { useRef, useState } from 'react';
 import Input from '../../UI/Input';
 import classes from './MealItemForm.module.css';
 
@@ -7,8 +6,6 @@ const MealItemForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
 
   const amountInputRef = useRef();
-
-  const cartContext = useContext(CartContext);
 
   const submitHandler = (event) => {
     event.preventDefault();
